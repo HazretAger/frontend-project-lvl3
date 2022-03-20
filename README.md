@@ -3,4 +3,4 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/03776846d64e6bc00f4e/maintainability)](https://codeclimate.com/github/HazretAger/frontend-project-lvl3/maintainability)
 
 ### Versel
-https://frontend-project-lvl3-eight-tawny.vercel.app/
+https://rss-agregator-eight.vercel.app/
