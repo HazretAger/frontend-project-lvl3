@@ -5,19 +5,21 @@ const model = () => {
     const state = {
         valid: true,
         value: "",
-        errors: []
+        error: ""
     };
 
     const schema = yup.string().required().url();
     const form = document.querySelector('form');
+    const feedEl = document.querySelector('.feedback');
     const input = form.elements.url;
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const data = new FormData(e.target);
         state.value = data.get('url');
         state.valid = schema.isValidSync(state.value);
-        render(state, input);
+        state.error = await schema.validate(state.value).catch((err) => { return err.message });
+        render(state, input, feedEl);
     })
 }
 
